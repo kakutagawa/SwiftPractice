@@ -7,7 +7,6 @@ enum MainSection {
 
 enum MainItem: String, Hashable, CaseIterable {
     case chapter0
-    case chapter1
 }
 
 final class MainViewController: UIViewController {
@@ -81,5 +80,20 @@ final class MainViewController: UIViewController {
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+
+        let item = MainItem.allCases[indexPath.row]
+
+        switch item {
+        case .chapter0:
+            let storyboard = UIStoryboard(name: "ChapterZero", bundle: nil)
+
+            guard
+                let viewController = storyboard.instantiateInitialViewController() as? ChapterZeroViewController
+            else {
+                return
+            }
+
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
 }
