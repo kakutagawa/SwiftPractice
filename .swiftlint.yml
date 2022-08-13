@@ -1,0 +1,17 @@
+excluded:
+  - .swiftformat
+  - SwiftPracticeTests
+  - SwiftPracticeUITests
+
+nesting:
+  type_level:
+    warning: 3
+
+line_length:
+  warning: 180
+  error: 240
+  ignores_comments: true
+
+type_name:
+  min_length: 3
+  max_length: 50
