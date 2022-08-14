@@ -14,7 +14,7 @@ class Animal {
 }
 ```
 
-<img src="Img/Class.png">
+<img src="Img/Tutorial/Class.png">
 
 実際にこの設計図を使って、製品を作ることを「インスタンス化(実体化)」と呼びます。
 
@@ -30,7 +30,7 @@ animal2.name = "猫"
 animal2.age = 1
 ```
 
-<img src="Img/Instance.png">
+<img src="Img/Tutorial/Instance.png">
 
 上記のanimal1とanimal2はインスタンス化した後に「name」と「age」に値を代入していますが、インスタンス化すると同時に値を代入することもできます。この処理を「イニシャライザ」と呼びます。
 
@@ -49,7 +49,7 @@ let dog = Animal(name: "犬", age: 4)
 let cat = Animal(name: "猫", age: 1)
 ```
 
-<img src="Img/Initializer.png">
+<img src="Img/Tutorial/Initializer.png">
 
 ### 継承
 クラス(class)には継承という考え方があり、継承するクラス(サブクラス)は継承されるクラス(スーパークラス)で定義した処理(メソッド)や情報(プロパティ)を定義せずとも使用することができます。新たに処理や情報を追加することも可能です。
@@ -84,7 +84,7 @@ dog.run() // 走る
 dog.shout() // ワンワン
 ```
 
-<img src="Img/Inheritance.png">
+<img src="Img/Tutorial/Inheritance.png">
 
 ### オーバーライド(override)
 サブクラスはスーパークラスから継承するメソッドやプロパティを再定義することができ、これを「オーバーライド(override)」と呼びます。
