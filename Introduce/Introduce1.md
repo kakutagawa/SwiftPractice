@@ -10,14 +10,14 @@ Swiftで値を保持するための方法は2種類あり、「定数」と「�
 
 イメージとしては「値を入れておく箱」と捉えておくと良いかもしれません。
 
-<img src="Img/Description1.png">
+<img src="Img/Introduce1/Description1.png">
 
 ※ 値を箱に入れることを「代入」と呼びます
 
 ### 定数
 定数は値を一度箱に入れると後から値を変更することができない特徴を持ちます。
 
-<img src="Img/Description2.png">
+<img src="Img/Introduce1/Description2.png">
 
 定数は`let`キーワードを使用し以下のように記述することで宣言することができます。
 
@@ -38,7 +38,7 @@ name = "John" // Cannot assign to value: 'name' is a 'let' constant
 ### 変数
 変数は値と一度箱に入れても後から値を変更することができる特徴を持ちます。
 
-<img src="Img/Description3.png">
+<img src="Img/Introduce1/Description3.png">
 
 変数は`var`キーワードを使用し以下のように記述することで宣言することができます。
 
@@ -68,7 +68,7 @@ String型は文字列を表す型です。
 
 Swiftではダブルクォート(")で囲まれた値を文字列として解釈し、String型として判定されます。
 
-<img src="Img/Description4.png">
+<img src="Img/Introduce1/Description4.png">
 
 定数にString型を定義する場合は以下のようになります。
 
@@ -119,7 +119,7 @@ let name = "太郎" // 自動的にString型として扱われる
 ## Int型
 Int型は整数を表す型です。
 
-<img src="Img/Description5.png">
+<img src="Img/Introduce1/Description5.png">
 
 Int型にはビット数によってさらに4種類の型が用意されており、以下のように分類されます。
 
@@ -139,7 +139,7 @@ let price: Int = 1000
 ## UInt型
 UInt型はマイナス値を含まない0以上の整数を表す型です。
 
-<img src="Img/Description6.png">
+<img src="Img/Introduce1/Description6.png">
 
 UInt型もInt型と同様にビット数によって4種類の型が用意されています。
 
@@ -161,7 +161,7 @@ let price: UInt = 10000
 ## Float・Double型
 Float・Double型は小数点を表す型です。
 
-<img src="Img/Description7.png">
+<img src="Img/Introduce1/Description7.png">
 
 ２つの違いは表現できる値の範囲が異なることで、Float型は10の38乗、Double型は10の308乗までの正負を表すことができます。
 
@@ -183,7 +183,7 @@ var float: Float = 1
 int = float // Cannot assign value of type 'Float' to type 'Int'
 ```
 
-<img src="Img/Description8.png">
+<img src="Img/Introduce1/Description8.png">
 
 ※ 上記の代入をしたい場合はイニシャライザ(初期化)という機能を使用して型を変換させる必要があります。
 
@@ -243,7 +243,7 @@ Bool型は真理値を表す型です。
 
 ある命題が真であれば`true`、偽であれば`false`の値が返されます。
 
-<img src="Img/Description9.png">
+<img src="Img/Introduce1/Description9.png">
 
 定数にBool型を定義する場合は以下のようになります。
 
@@ -324,7 +324,7 @@ var apple: String = "りんご"
 apple = nil // 'nil' cannot be assigned to type 'String'
 ```
 
-<img src="Img/Description10.png">
+<img src="Img/Introduce1/Description10.png">
 
 変数がnilを許容するためにはOptional型にする必要があり、型に対して`?`もしくは`!`を記述します。Optional型では変数の宣言と同時に自動的に`nil`が代入されます。
 
@@ -346,7 +346,7 @@ print(vegetable)
 // nil
 ```
 
-<img src="Img/Description11.png">
+<img src="Img/Introduce1/Description11.png">
 
 ### 値の出力
 Optional型で定義した値はOptional用の値となり、通常の値としては出力されません。
@@ -370,7 +370,7 @@ var number2: Int? = 20
 print(number1 + number2) // Value of optional type 'Int?' must be unwrapped to a value of type 'Int'
 ```
 
-<img src="Img/Description12.png">
+<img src="Img/Introduce1/Description12.png">
 
 ### アンラップ
 先ほどOptionalの値と通常の値を同様に扱うことはできないと説明しましたが、Optionalの値を通常の値にして取り出す方法があります。このOptionalの値から通常の値を取り出すことを「アンラップ」と言います。
@@ -389,7 +389,7 @@ print(number1 + number2!)
 
 変数`number2`の後に`!`を付けることでアンラップしました。これは`Forced Unwrapping(強制的アンラップ)`と呼ばれる方法で、変数にどのような値が入っていてもOptional型を強制的にアンラップします。
 
-<img src="Img/Description13.png">
+<img src="Img/Introduce1/Description13.png">
 
 強制的アンラップは、変数にnilが入っていた場合はエラーが発生してしまうため取り扱う際には注意が必要です。
 
@@ -397,10 +397,10 @@ print(number1 + number2!)
 var number1: Int = 10
 var number2: Int? = nil
 
-print(number1 + number2!) // error: Execution was interrupted, reason: EXC_BAD_INSTRUCTION (code=EXC_I386_INVOP, subcode=0x0).
+print(number1 + number2!) // Fatal error: Unexpectedly found nil while unwrapping an Optional value
 ```
 
-<img src="Img/Description14.png">
+<img src="Img/Introduce1/Description14.png">
 
 強制的アンラップはOptional型の変数の値に関係なくアンラップするため、変数にnilが入っていた場合はエラーが発生してしまう問題がありましたが、この問題を解決する別のアンラップの方法としてオプショナルバインディング(Optional Binding)があります。
 
@@ -429,7 +429,7 @@ if let number2 = number2 {
 // 出力結果(出力なし)
 ```
 
-<img src="Img/Description15.png">
+<img src="Img/Introduce1/Description15.png">
 
 ### オプショナル型(?)と暗黙的アンラップ型(!)の違い
 型の後に`?`もしくは`!`を付けることでOptional型にすることができると説明しましたが、`!`で定義したものは暗黙的アンラップ型と呼び、使用するときに必ず強制的アンラップをします。そのため、暗黙的アンラップ型には強制的アンラップを記述する必要はありません。
@@ -448,13 +448,13 @@ print(number1 + number2)
 var number1: Int = 10
 var number2: Int! = nil
 
-print(number1 + number2) // error: Execution was interrupted, reason: EXC_BAD_INSTRUCTION (code=EXC_I386_INVOP, subcode=0x0).
+print(number1 + number2) // Fatal error: Unexpectedly found nil while unwrapping an Optional value
 ```
 
 ## Tuple型
 Tuple型は複数の型を1つにまとめて扱う型です。
 
-<img src="Img/Description16.png">
+<img src="Img/Introduce1/Description16.png">
 
 Tupleを使うことで、複数の値を1つのデータとして管理することができます。
 
@@ -467,7 +467,7 @@ var tuple: (String, Int, String, Bool) = ("山田", 100, "野球", true)
 ### Tuple要素(値)へのアクセス
 タプルにはそれぞれの値にアクセスするための`index`という識別情報(番号)が付けられており、タプルの値は`変数名.index`で取得することができます。
 
-<img src="Img/Description17.png">
+<img src="Img/Introduce1/Description17.png">
 
 ※ `index`は最初の要素(値)を0として順番に数えられます。
 
@@ -509,7 +509,7 @@ print(tuple.isStudent)
 ## Void型
 Void型は要素の型が0個のTuple型です。
 
-<img src="Img/Description18.png">
+<img src="Img/Introduce1/Description18.png">
 
 `nil`と似ていますが、`nil`は値が本来値が入っている場所に値がないことを表しているのに対して、Void型はそもそもとして値が存在しないことを表す違いがあります。
 
