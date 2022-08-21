@@ -45,7 +45,7 @@
 
 Returnキーを押した時に出力されるログ
 
-<Img src="Img/Task/Todo3.png" width="30%">
+<Img src="Img/Task/Todo3.png">
 
 <details>
 
