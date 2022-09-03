@@ -28,6 +28,7 @@ Storyboardには様々な部品を設置することができます。
 
 ## 【TODO2】 UILabel(部品)をカスタマイズしよう
 UILabel(部品)は表示する文字やフォント、色などをカスタマイズがすることができます。
+
 設置したUILabelを選択しながらユーティリティエリアを見てみると、設定しているLabelの情報を確認することができます。
 
 <img src="Img/Task/Description3.png" width="90%">
@@ -80,7 +81,7 @@ height
 
 <Img src="Img/Task/Description8.png" width="90%">
 
-※ 制約を設定した後に「Add Constraints」を押下することで制約が適用されます
+※ 制約を設定した後に「Add Constraints」を押下することで制約が適用されます。
 
 【やること】
 
@@ -94,7 +95,7 @@ iPhone13 | iPad Pro(12.9inch)
 :--: | :--:
 <Img src="Img/Task/Todo3_iPhone.png" width="70%"> | <Img src="Img/Task/Todo3_iPad.png" width="70%">
 
-## TODO4: UIButton(部品)を配置しよう
+## 【TODO4】 UIButton(部品)を配置しよう
 タップしたときに何かアクションをおこしたいといった場合には`UIButton`という部品を取り扱います。
 
 【やること】
@@ -109,10 +110,10 @@ iPhone13 | iPad Pro(12.9inch)
 
 <Img src="Img/Task/Todo4.png" width="30%">
 
-## TODO5: UIButton(部品)をカスタマイズしよう(コード)
+## 【TODO5】 UIButton(部品)をカスタマイズしよう(コード)
 【TODO2】、【TODO4】でユーティリティエリアから部品をカスタマイズしてきましたが、こちらを使わずにコードで変更することもできます。
 
-コードで変更するためには`ChapterZero.storyboard`と`ChapterZeroViewController.swift`を接続させる必要があります。
+コードで変更するためには`ChapterZero.storyboard`と`ChapterZeroViewController`を接続させる必要があります。
 
 **UIStoryboardとUIViewControllerの接続方法(アウトレット接続)**
 1. Storyboardで接続したいUIViewControllerを指定します(こちらは既に行っているので不要です)
@@ -131,13 +132,13 @@ iPhone13 | iPad Pro(12.9inch)
 
 【やること】
 
-- `ChapterZero.storyboard`で設置した`UIButton`を`ChapterZeroViewController.swift`にアウトレット接続させましょう
+- `ChapterZero.storyboard`で設置した`UIButton`を`ChapterZeroViewController`にアウトレット接続させましょう
 - アウトレット接続した`UIButton`を使用してコード上でボタンの文字を`ボタンチェンジ`に変更しましょう
 - アウトレット接続した`UIButton`を使用してコード上の文字色を黒色に変更しましょう
 
-※ `ChapterZeroViewController.swift`内の`viewDidLoad()`では画面の読み込みが完了した後に呼び出される処理になります。そのため`UIButton`の変更も`viewDidLoad()`に記述しましょう
+※ `ChapterZeroViewController.swift`内の`viewDidLoad()`では画面の読み込みが完了した後に呼び出される処理になります。そのため`UIButton`の変更も`viewDidLoad()`に記述しましょう。
 
-`画面読み込み(ボタン生成) → 画面読み込み完了[viewDidLoad()](ボタン生成完了): ボタン文字・色変更 → 画面表示`のような流れになります
+`画面読み込み(ボタン生成) → 画面読み込み完了[viewDidLoad()](ボタン生成完了): ボタン文字・色変更 → 画面表示`のような流れになります。
 
 <details>
 
@@ -162,7 +163,7 @@ final class ChapterZeroViewController: UIViewController {
 
 <Img src="Img/Task/Todo5.png" width="30%">
 
-## TODO6: UIButton(部品)のタップ処理を作成しよう
+## 【TODO6】 UIButton(部品)のタップ処理を作成しよう
 【TODO5】で`UIButton`のアウトレット接続を行いましたが、タップや長押しなどの操作ができる部品にはアクション接続と呼ばれる別の接続を行うことができます。このアクション接続をした中に処理を記述することで、タップをされた時などに処理を行うことができます。
 
 **UIStoryboardとUIViewControllerの接続方法(アクション接続)**
@@ -173,8 +174,9 @@ final class ChapterZeroViewController: UIViewController {
 <Img src="Img/Task/Description12.png" width="90%">
 
 【やること】
-- `ChapterZero.storyboard`で設置した`UILabel`を`ChapterZeroViewController.swift`にアウトレット接続させましょう(名前は「label」として設定してください)
-- `ChapterZero.storyboard`で設置した`UIButton`を`ChapterZeroViewController.swift`にアクション接続させましょう
+
+- `ChapterZero.storyboard`で設置した`UILabel`を`ChapterZeroViewController`にアウトレット接続させましょう(名前は「label」として設定してください)
+- `ChapterZero.storyboard`で設置した`UIButton`を`ChapterZeroViewController`にアクション接続させましょう
 - ボタンをタップした際に「Hello World!」の文字が表示されている`UILabel`を「Goodbye World!」に変更しましょう
 
 <details>
