@@ -77,41 +77,35 @@ final class MainViewController: UIViewController {
 
         return cell
     }
+
+    private func showChpaterScreen(item: MainItem) {
+        let storyboard: UIStoryboard
+
+        switch item {
+        case .chapter0:
+            storyboard = UIStoryboard(name: "ChapterZero", bundle: nil)
+
+        case .chapter1:
+            storyboard = UIStoryboard(name: "ChapterOne", bundle: nil)
+
+        case .chapter2:
+            storyboard = UIStoryboard(name: "ChapterTwo", bundle: nil)
+        }
+
+        guard let viewController = storyboard.instantiateInitialViewController() else {
+            return
+        }
+
+        navigationController?.pushViewController(
+            viewController,
+            animated: true
+        )
+    }
 }
 
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-
-        let item = MainItem.allCases[indexPath.row]
-
-        switch item {
-        case .chapter0:
-            let storyboard = UIStoryboard(name: "ChapterZero", bundle: nil)
-
-            guard let viewController = storyboard.instantiateInitialViewController() as? ChapterZeroViewController else {
-                return
-            }
-
-            navigationController?.pushViewController(viewController, animated: true)
-
-        case .chapter1:
-            let storyboard = UIStoryboard(name: "ChapterOne", bundle: nil)
-
-            guard let viewController = storyboard.instantiateInitialViewController() as? ChapterOneViewController else {
-                return
-            }
-
-            navigationController?.pushViewController(viewController, animated: true)
-
-        case .chapter2:
-            let storyboard = UIStoryboard(name: "ChapterTwo", bundle: nil)
-
-            guard let viewController = storyboard.instantiateInitialViewController() as? ChapterTwoViewController else {
-                return
-            }
-
-            navigationController?.pushViewController(viewController, animated: true)
-        }
+        showChpaterScreen(item: MainItem.allCases[indexPath.row])
     }
 }
