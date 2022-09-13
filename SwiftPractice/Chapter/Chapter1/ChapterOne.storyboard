@@ -16,9 +16,30 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nqN-xI-eDW">
+                                <rect key="frame" x="117" y="428" width="180" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="LIX-ck-TvI"/>
+                                    <constraint firstAttribute="height" constant="40" id="hIZ-OQ-eOF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textField:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="GTm-au-Dec"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nqN-xI-eDW" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="1sw-7p-ydH"/>
+                            <constraint firstItem="nqN-xI-eDW" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="l4R-Fu-o8w"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="nqN-xI-eDW" id="dD9-Tu-RQe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
